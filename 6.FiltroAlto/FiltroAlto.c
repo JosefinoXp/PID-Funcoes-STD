@@ -23,7 +23,7 @@ int main() {
 
     // Carrega a imagem e verifica se imagem existe
     // forço canal de uma imagem em tons de cinza (.., 1);
-    unsigned char *img = stbi_load("gato-senior01.png", &width, &height, &channels, 1);
+    unsigned char *img = stbi_load("ImagemEscolhida.png", &width, &height, &channels, 1);
     if (!img) {
         printf("Erro ao carregar imagem\n");
         return 1;
@@ -70,14 +70,14 @@ int main() {
     }
 
     // Salva a imagem com imagem atualizada com filtro
-    stbi_write_png("gato-alto.png", width, height, 1, filtro_img, width);
+    stbi_write_png("Gato-Alto.png", width, height, 1, filtro_img, width);
 
     // Libera memória
     stbi_image_free(img);
     free(gray_img);
     free(filtro_img);
 
-    printf("Imagem convertida e salva como 'gato-alto.png'\n");
+    printf("Imagem convertida e salva como 'Gato-Alto.png'\n");
 
     return 0;
 }

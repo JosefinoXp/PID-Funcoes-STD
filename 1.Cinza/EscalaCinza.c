@@ -11,7 +11,7 @@ int main() {
     int width, height, channels;
 
     // Carrega a imagem e verifica se imagem existe
-    unsigned char *img = stbi_load("input.png", &width, &height, &channels, 0);
+    unsigned char *img = stbi_load("ImagemEscolhida.png", &width, &height, &channels, 0);
     if (!img) {
         printf("Erro ao carregar imagem\n");
         return 1;
@@ -23,6 +23,7 @@ int main() {
     unsigned char *gray_img = malloc(width * height * channels);
 
     // Converte para tons de cinza
+    // A média dos valores RGB é usada para calcular o valor cinza
     for (int i = 0; i < width * height; i++) {
         int r = img[i * channels + 0];
         int g = img[i * channels + 1];
@@ -41,13 +42,13 @@ int main() {
     }
 
     // Salva a imagem como PNG
-    stbi_write_png("saida_cinza.png", width, height, channels, gray_img, width * channels);
+    stbi_write_png("Gato-Cinza.png", width, height, channels, gray_img, width * channels);
 
     // Libera memória
     stbi_image_free(img);
     free(gray_img);
 
-    printf("Imagem convertida e salva como 'saida_cinza.png'\n");
+    printf("Imagem convertida e salva como 'Gato-Cinza.png'\n");
 
     return 0;
 }

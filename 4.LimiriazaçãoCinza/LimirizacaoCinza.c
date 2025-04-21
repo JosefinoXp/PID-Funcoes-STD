@@ -12,7 +12,7 @@ int main() {
     unsigned int limiar, soma_pixels, total_pixels;
 
     // Carrega a imagem e verifica se imagem existe
-    unsigned char *img = stbi_load("input.png", &width, &height, &channels, 0);
+    unsigned char *img = stbi_load("ImagemEscolhida.png", &width, &height, &channels, 0);
     if (!img) {
         printf("Erro ao carregar imagem\n");
         return 1;
@@ -72,13 +72,13 @@ int main() {
     }
 
     // Salva a imagem como PNG
-    stbi_write_png("Limirizacao_Cinza.png", width, height, channels, gray_img, width * channels);
+    stbi_write_png("Gato-Limirizacao.png", width, height, channels, gray_img, width * channels);
 
     // Libera memória
     stbi_image_free(img);
     free(gray_img);
 
-    printf("Imagem convertida e salva como 'Limirizacao_Cinza.png'\n");
+    printf("Imagem convertida e salva como 'Gato-Limirizacao.png'\n");
 
     return 0;
 }

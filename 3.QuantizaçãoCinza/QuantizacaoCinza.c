@@ -19,7 +19,7 @@ int main() {
     int width, height, channels;
 
     // Carrega a imagem e verifica se imagem existe
-    unsigned char *img = stbi_load("input.png", &width, &height, &channels, 0);
+    unsigned char *img = stbi_load("ImagemEscolhida.png", &width, &height, &channels, 0);
     if (!img) {
         printf("Erro ao carregar imagem\n");
         return 1;
@@ -56,13 +56,13 @@ int main() {
     }
 
     // Salva a imagem como PNG
-    stbi_write_png("Quantizacao_cinza.png", width, height, channels, gray_img, width * channels);
+    stbi_write_png("Gato-Quantizacao.png", width, height, channels, gray_img, width * channels);
 
     // Libera memória
     stbi_image_free(img);
     free(gray_img);
 
-    printf("Imagem convertida e salva como 'Quantizacao_cinza.png'\n");
+    printf("Imagem convertida e salva como 'Gato-Quantizacao.png'\n");
 
     return 0;
 }
