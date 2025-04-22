@@ -17,7 +17,7 @@ int main() {
     char nome_arq[20] = "histograma.txt";
 
     // Carrega a imagem e verifica se imagem existe
-    unsigned char *img = stbi_load("ImagemEscolhida.png", &width, &height, &channels, 0);
+    unsigned char *img = stbi_load("Gato-Cinza.png", &width, &height, &channels, 0);
     if (!img) {
         printf("Erro ao carregar imagem\n");
         return 1;
